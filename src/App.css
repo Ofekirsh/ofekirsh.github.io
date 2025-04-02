@@ -4,8 +4,11 @@
 }
 
 .content {
+	display: flex;
+	gap: 0.7em;
 	padding: 2em;
 	max-width: var(--max-width);
 	margin: auto;
 	text-align: left;
+	flex-direction: column;
 }
