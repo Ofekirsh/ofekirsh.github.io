@@ -15,7 +15,9 @@ const Card: FC<CardProps> = ({
 	<div className="card">
 		{imageUrl && <img src={imageUrl} alt={title} /> }
 		<h3>{title}</h3>
-		{children}
+		<div className="card-content">
+			{children}
+		</div>
 	</div>
 );
 

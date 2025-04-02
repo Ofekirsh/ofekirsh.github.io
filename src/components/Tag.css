@@ -1,0 +1,23 @@
+
+.tag {
+	border-radius: 8px;
+	font-size: 12pt;
+	padding: 4px 8px;
+}
+
+.tag.light {
+	background-color: #f0f0f0;
+	color: #343434;
+}
+
+.tag.dark {
+	background-color: #444;
+	color: #ddd;
+}
+
+.tags-container {
+	display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}

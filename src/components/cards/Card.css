@@ -21,3 +21,9 @@
   margin: 0 auto;
   display: block;
 }
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5em;
+}
