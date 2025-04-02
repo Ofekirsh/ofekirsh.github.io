@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
-import CardsGrid from "../components/CardsGrid";
-import Card from "../components/Card";
+import CardsGrid from "../components/cards/CardsGrid";
+import Card from "../components/cards/Card";
 import "./Home.css";
 
 const Home = () => (
