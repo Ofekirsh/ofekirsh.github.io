@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
-import CardsGrid from "../components/cards/CardsGrid";
-import Card from "../components/cards/Card";
+import Grid from "../components/Grid";
+import Card from "../components/Card";
 import "./Home.css";
 
 const Home = () => (
@@ -37,7 +37,7 @@ const Home = () => (
 		</div>
 		
 		<h2>Research Interests</h2>
-		<CardsGrid itemsPerRow={3}>
+		<Grid itemsPerRow={3}>
 			<Card title="Machine Learning">
 				Deep learning, neural networks, and their mathematical foundations.
 			</Card>
@@ -47,7 +47,7 @@ const Home = () => (
 			<Card title="Data Science">
 			Statistical analysis, data visualization, and predictive modeling.
 			</Card>
-		</CardsGrid>
+		</Grid>
 	</div>
 );
 

@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import "./Card.css";
+import "../cards/Card.css";
 
 type CardProps = {
 	title: string;

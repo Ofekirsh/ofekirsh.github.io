@@ -1,12 +1,12 @@
 import { FC, ReactNode } from "react";
-import "./CardsGrid.css";
+import "../cards/Grid.css";
 
-type CardsGridProps = {
+type GridProps = {
 	itemsPerRow: number;
 	children?: ReactNode;
 }
 
-const CardsGrid: FC<CardsGridProps> = ({
+const Grid: FC<GridProps> = ({
 	itemsPerRow,
 	children,
 }) => {
@@ -22,4 +22,4 @@ const CardsGrid: FC<CardsGridProps> = ({
 	);
 };
 
-export default CardsGrid;
+export default Grid;

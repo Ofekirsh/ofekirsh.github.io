@@ -1,8 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Resume.css";
 import { faDownload } from "@fortawesome/free-solid-svg-icons";
-import Card from "../components/cards/Card";
-import CardsGrid from "../components/cards/CardsGrid";
+import Card from "../components/Card";
+import Grid from "../components/Grid";
 import { Tag, TagsContainer } from "../components/Tag";
 
 const Resume = () => {
@@ -26,7 +26,7 @@ const Resume = () => {
 			</Card>
 			
 			<h2>Skills</h2>
-			<CardsGrid itemsPerRow={2}>
+			<Grid itemsPerRow={2}>
 				<Card title="Techical Skills">
 					<TagsContainer>
 						<Tag theme="dark">Python</Tag>
@@ -47,7 +47,7 @@ const Resume = () => {
 						<Tag>Algorithm Design</Tag>
 					</TagsContainer>
 				</Card>
-			</CardsGrid>
+			</Grid>
 			
 			<h2>Research Experience</h2>
 			<Card title="Research Assistant" dateStr="2023 - 2024">

@@ -1,5 +1,5 @@
-import Card from "../components/cards/Card";
-import CardsGrid from "../components/cards/CardsGrid";
+import Card from "../components/Card";
+import Grid from "../components/Grid";
 
 import mlpImgSrc from "../assets/projects-imgs/mlp.png";
 import { Tag, TagsContainer } from "../components/Tag";
@@ -7,7 +7,7 @@ import { Tag, TagsContainer } from "../components/Tag";
 const Projects = () => (
 	<div className="content">
 		<h1>Featured Projects</h1>
-		<CardsGrid itemsPerRow={3}>
+		<Grid itemsPerRow={3}>
 			<Card
 				imageUrl={mlpImgSrc}
 				title="Multi-Layered Perceptrons"
@@ -23,7 +23,7 @@ const Projects = () => (
 					<Tag>Python</Tag>
 				</TagsContainer>
 			</Card>
-		</CardsGrid>
+		</Grid>
 	</div>
 )
 
