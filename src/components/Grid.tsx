@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import "../cards/Grid.css";
+import "./Grid.css";
 
 type GridProps = {
 	itemsPerRow: number;
@@ -7,10 +7,10 @@ type GridProps = {
 }
 
 const Grid: FC<GridProps> = ({
-	itemsPerRow,
+	itemsPerRow: columns,
 	children,
 }) => {
-	const gridTemplateColumns = `repeat(${itemsPerRow}, 1fr)`;
+	const gridTemplateColumns = `repeat(${columns}, 1fr)`;
 	
 	return (
 		<div

@@ -1,8 +1,8 @@
 import { FC, ReactNode } from "react";
-import "../cards/Card.css";
+import "./Card.css";
 
 type CardProps = {
-	title: string;
+	title: ReactNode;
 	dateStr?: string;
 	imageUrl?: string;
 	children?: ReactNode;
@@ -15,9 +15,9 @@ const Card: FC<CardProps> = ({
 	children
 }) => (
 	<div className="card">
-		{imageUrl && <img src={imageUrl} alt={title} /> }
-		<div className="card-title">
-			<h3>{title}</h3>
+		{imageUrl && <img src={imageUrl} alt={imageUrl} /> }
+		<div className="card-header">
+			<h3 className="card-title">{title}</h3>
 			<p>{dateStr}</p>
 		</div>
 		<div className="card-content">

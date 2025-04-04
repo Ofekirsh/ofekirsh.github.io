@@ -9,15 +9,16 @@
   flex-direction: column;
 }
 
-.card-title {
+.card-header, .card .card-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 0;
 }
 
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5em;
+.card-title {
+	display: inline-flex;
+	gap: 0.5em;
 }
 
 .card img {
@@ -28,8 +29,10 @@
   display: block;
 }
 
-.card-content {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5em;
+.card-content > * {
+	margin-top: 1em;
+}
+
+.card-title svg {
+	margin-top: 0.2em;
 }
