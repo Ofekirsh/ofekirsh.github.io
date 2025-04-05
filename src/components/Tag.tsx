@@ -13,7 +13,7 @@ export const Tag: FC<TagProps> = ({
 	<div className={`tag ${theme}`}>{children}</div>
 );
 
-export const TagsContainer: FC<PropsWithChildren<{}>> = ({ children }) => (
+export const TagsContainer: FC<PropsWithChildren> = ({ children }) => (
 	<div className="tags-container">
 		{children}
 	</div>
