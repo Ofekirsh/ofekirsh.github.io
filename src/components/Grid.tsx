@@ -14,7 +14,7 @@ const Grid: FC<GridProps> = ({
 	
 	return (
 		<div
-			className="cards-grid"
+			className="grid"
 			style={{gridTemplateColumns}}
 		>
 			{children}

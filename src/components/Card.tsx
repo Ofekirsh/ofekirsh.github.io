@@ -26,4 +26,8 @@ const Card: FC<CardProps> = ({
 	</div>
 );
 
+export const CardSpacer: FC = () => (
+	<div className="card-spacer"></div>
+)
+
 export default Card;

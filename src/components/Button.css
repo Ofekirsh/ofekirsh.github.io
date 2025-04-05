@@ -1,11 +1,10 @@
 a.btn {
   margin: 1em 1em 1em 0;
-  padding: 0.6em 1em;
+  padding: 0.5em 0.6em;
 	display: inline-flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 0.5em;
-  font-size: 1em;
   border: none;
   background: #eee;
   border-radius: 6px;

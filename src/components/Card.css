@@ -5,7 +5,6 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   min-width: 200px;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -27,6 +26,13 @@
   object-fit: cover;
   margin: 0 auto;
   display: block;
+	margin-bottom: 1em;
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 
 .card-content > * {
@@ -35,4 +41,8 @@
 
 .card-title svg {
 	margin-top: 0.2em;
+}
+
+.card-spacer {
+	flex-grow: 1;
 }
