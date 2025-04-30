@@ -11,11 +11,11 @@ const Home = () => (
 	<div className="content">
 		<div className="intro-wrapper">
 			<div className="introduction">
-				<h1>Hi, I'm Ofek 👋</h1>
-				<p className="subtitle">Master's student in Mathematics specializing in Artificial Intelligence</p>
+				<h1>Hi, I'm Ofek!</h1>
+				<p className="subtitle">Master's student in Mathematics specializing in Deep Learning.</p>
 				<p className="description">
-					I'm passionate about combining mathematical principles with artificial intelligence to solve complex problems.
-					Currently in my final semester, focusing on [specific research area/interests].
+          I bring together solid mathematical reasoning and modern deep learning techniques to work on problems that matter.
+          My focus isn't just on performance - it's on purpose.
 				</p>
 				
 				<div>
@@ -39,15 +39,17 @@ const Home = () => (
 		<h2>Research Interests</h2>
 		<Grid itemsPerRow={3}>
 			<Card title="Machine Learning">
-				Deep learning, neural networks, and their mathematical foundations.
+        Development, analysis, and use of algorithms for computer processing of sequences.
 			</Card>
 			<Card title="Mathematical Optimization">
-			Convex optimization, numerical methods, and algorithmic efficiency.
+			  Exploring the structure and behavior of biological systems through mathematical modeling and algorithmic analysis.
 			</Card>
 			<Card title="Data Science">
-			Statistical analysis, data visualization, and predictive modeling.
+        Developing a graph to capture the structure and dependencies in data
 			</Card>
 		</Grid>
+    
+    <p className="centered">Fueled by coffee, ambition, and desire</p>
 	</div>
 );
 

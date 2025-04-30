@@ -6,6 +6,10 @@ import { Tag, TagsContainer } from "../components/Tag";
 import { ReactNode } from "react";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 
+import mlpImg from "../assets/projects-imgs/mlp.png";
+import vaeImg from "../assets/projects-imgs/vae.png";
+import gpt2Img from "../assets/projects-imgs/gpt2.png";
+
 type ProjectData = {
 	title: string;
 	imageUrl: string;
@@ -17,7 +21,7 @@ type ProjectData = {
 const projectsData: ProjectData[] = [
 	{
 		title: "GPT-2",
-		imageUrl: "https://raw.githubusercontent.com/Ofekirsh/GPT-2/refs/heads/main/images/gpt2_image.png",
+		imageUrl: gpt2Img,
 		description: (
 			<>
 				<p>An implementation of a GPT-2-inspired transformer language model. It has been trained separately on two datasets:</p>
@@ -40,12 +44,12 @@ const projectsData: ProjectData[] = [
 				and is evaluated on the MNIST dataset.
 			</p>
 		),
-		tags: ["PyTorch", "Generative Model", "Diffusion", "Probabilistic Models", "Denoising", "DDPM", "DDLM"],
+		tags: ["PyTorch", "Generative Model", "Diffusion", "Probabilistic Models", "Denoising", "DDPM", "DDIM"],
 		sourceCodeUrl: "https://github.com/Ofekirsh/Denoising-Diffusion-Probabilistic-Model",
 	},
 	{
 		title: "Multi-Layer Perceptrons (MLP)",
-		imageUrl: "https://raw.githubusercontent.com/Ofekirsh/Multi-Layer-Perceptron/refs/heads/main/images/neuralnet_mlp_1.png",
+		imageUrl: mlpImg,
 		description: (
 			<p>
 				This project provides an implementation of a multilayer perceptron (MLP) from scratch using Python and NumPy.
@@ -57,7 +61,7 @@ const projectsData: ProjectData[] = [
 		sourceCodeUrl: "https://github.com/Ofekirsh/Multi-Layer-Perceptron",
 	},
 	{
-		title: "",
+		title: "Deep Reinforcement Learning Minigrid",
 		imageUrl: "https://raw.githubusercontent.com/Ofekirsh/Deep-Reinforcement-Learning-Minigrid/refs/heads/main/videos/evaluation_with_memory.gif",
 		description: (
 			<>
@@ -85,7 +89,7 @@ const projectsData: ProjectData[] = [
 	},
 	{
 		title: "Auto Encoding Variational Bayes",
-		imageUrl: "https://raw.githubusercontent.com/Ofekirsh/Auto-Encoding-Variational-Bayes/refs/heads/main/images/vae_image.png",
+		imageUrl: vaeImg,
 		description: (
 			<p>
 				Implementation of the Variational Autoencoders (VAEs) based on the paper "Auto-Encoding Variational Bayes" by
@@ -117,7 +121,7 @@ const Projects = () => (
 	<div className="content">
 		<h1>Featured Projects</h1>
 		<Grid itemsPerRow={3}>
-			{projectsData.map(({title, imageUrl, description, tags}, index) => (
+			{projectsData.map(({title, imageUrl, description, tags, sourceCodeUrl}, index) => (
 				
 				<Card
 					key={index}
@@ -126,10 +130,8 @@ const Projects = () => (
 				>
 					<p>
 						{description}
-						<Button><FontAwesomeIcon icon={faLink} /> GitHub</Button>
+						<Button href={sourceCodeUrl}><FontAwesomeIcon icon={faLink} /> GitHub</Button>
 					</p>
-					
-					
 					
 					<CardSpacer />
 					
