@@ -46,3 +46,8 @@
 .card-spacer {
 	flex-grow: 1;
 }
+
+.hero-img {
+  border-radius: 1rem;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}

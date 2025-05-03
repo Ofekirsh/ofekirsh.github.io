@@ -1,10 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Resume.css";
-import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { faDownload, faLink } from "@fortawesome/free-solid-svg-icons";
 import Card from "../components/Card";
 import Grid from "../components/Grid";
 import { Tag, TagsContainer } from "../components/Tag";
 import Subsection, { CardData } from "../components/Subsection";
+import Button from "../components/Button";
+import { FC, PropsWithChildren } from "react";
+
+const BoldItalicizedSmall: FC<PropsWithChildren<{fontSize?: string, block?: boolean}>> = ({ fontSize = '12pt', block = false, children }) => (
+  block
+    ? <div style={{fontSize}}><b><i>{children}</i></b></div>
+    : <span style={{fontSize}}><b><i>{children}</i></b></span>
+);
+
+const Spacer: FC = () => <div style={{height: '8pt'}} />;
 
 const educationCards: CardData[] = [
 	{
@@ -13,63 +23,98 @@ const educationCards: CardData[] = [
 			<>
 				<p>Bar-Ilan University</p>
 				<p>Specialization in Data Science.</p>
+        <Spacer />
+        <TagsContainer>
+          <Tag>
+            President Scholarship
+          </Tag>
+        </TagsContainer>
 			</>
 		),
 		dateStr: "2024 - Current",
 	},
+  {
+    title: "Student Exchange Program",
+    content: (
+      <>
+        <p>Humboldt University of Berlin</p>
+        <p>
+          Immersed in a new culture, navigated unfamiliar languages, and built connections with people from around the world.
+        </p>
+        <Spacer />
+        <TagsContainer>
+          <Tag>Cross-Cultural Communication</Tag>
+          <Tag>Open-Mindedness</Tag>
+        </TagsContainer>
+      </>
+    ),
+    dateStr: "2025",
+  },
 	{
 		title: "B.Sc. in Mathematics",
 		content: (
 			<>
 				<p>Bar-Ilan University</p>
-				<p>Graduated with honors and a minor in Computer Science.</p>
+				<p>Graduated with a honors with a GPA of 94.54 and a minor in Computer Science.</p>
+        <Spacer />
+        <TagsContainer>
+          <Tag>Direct Track</Tag>
+        </TagsContainer>
 			</>
 		),
 		dateStr: "2021 - 2024",
 	}
 ]
 
-const researchCards: CardData[] = [
-	{
-		title: "",
-		content: (
-			<>
-				<p>Prof. Yoram Louzon's lab, Department of Mathematics, Bar-Ilan University</p>
-				<ul>
-					<li>Conducting data sampling from populations.</li>
-					<li>Helped developing the Genotype algorithm.</li>
-				</ul>
-			</>
-		)
-	},
-];
-
 const experienceCards: CardData[] = [
-	{
-		title: "Military Service",
-		content: <>Served in <b>Unit 8200</b>, Israel's elite cyber intelligence unit.</>,
-	},
-	{
-		title: "Startup Co-Founder",
+  {
+    title: "Lecturer & Teaching Assistant",
+    content: (
+      <>
+        <p>Programming & Mathematics</p>
+        <Spacer />
+        <BoldItalicizedSmall block>Want a glimpse into my teaching style?</BoldItalicizedSmall>
+        <Button href="https://www.youtube.com/playlist?list=PLk-g4yofGXLRb8hkYZB0Me33EnQdU6xdW"><FontAwesomeIcon icon={faLink} /> Calculus I (2025)</Button>
+        <Button href="https://www.youtube.com/playlist?list=PLk-g4yofGXLSi3IL69u0ILplKVpBtdbu7"><FontAwesomeIcon icon={faLink} /> Intro to Programming (2026)</Button>
+        <Button href="https://www.youtube.com/playlist?list=PLk-g4yofGXLSWYvgnISD7xSnJeMngIVFC"><FontAwesomeIcon icon={faLink} /> Calculus I (2024)</Button>
+      </>
+    ),
+    dateStr: '2023 - Current',
+  },
+  {
+		title: "Research Assistant",
 		content: (
 			<>
-				Co-founded a startup with Ilay Gilman and Ido Ben Hamo.
-				<ul>
-					<li>Accepted into a tech accelerator.</li>
-					<li>
-						Clients included: <b>The Israel Football Association</b>
-						, <b>Bank Hapoalim</b>
-						, <b>Direct Insurance</b>
-						, <b>Pelephone</b>
-						, and more.
-					</li>
-				</ul>
+				<p><a href="https://yolo.math.biu.ac.il/">Prof. Yoram Louzon's lab</a>, Department of Mathematics, Bar-Ilan University</p>
+        <Spacer />
+        <p>Contributed to research in computational biology and algorithmic modeling for donor-recipient matching in hematopoietic stem cell transplantation (HSCT).</p>
 			</>
 		),
+    dateStr: '2023',
 	},
 	{
-		title: "Lecturer at 25",
-		content: "Taught a Python course in the Mathematics Department at age 25.",
+		title: "Upllery Co-Founder",
+		content: (
+			<>
+				<p>
+          Co-founded and led the development of Upllery, a SaaS platform designed to help brands collect, curate, and showcase user-generated content from social media in real time.
+        </p>
+        <Spacer />
+        <p>
+          Delivered solutions to leading clients, including <b>Bezeq</b>, <b>Bank Hapoalim</b>, <b>The Israeli Football Association</b>, etc.
+        </p>
+        <Spacer />
+        <p>
+          Participated in entrepreneurship and accelerator programs such as Leading Edge Consultants, AtoBe Accelerator, and HYPE Sports Innovation.
+        </p>
+			</>
+		),
+    dateStr: '2019 - 2023',
+	},
+  {
+		title: "Military Service",
+		content: <>Served in <b>Unit 8200</b>, Israel's elite cyber intelligence unit as a hardware and software developer.</>,
+    dateStr: '2018 - 2021',
 	},
 ];
 
@@ -78,36 +123,34 @@ const Resume = () => {
 		<div className="content" style={{maxWidth: "1000px"}}>
 			<div className="title-container">
 				<h1>Resume</h1>
-				<a href="" className="btn"><FontAwesomeIcon icon={faDownload} /> Download PDF</a>
+				<a className="btn"><FontAwesomeIcon icon={faDownload} /> Download PDF</a>
 			</div>
 			
 			<Subsection title="Education" cards={educationCards} />
 			
 			<h2>Skills</h2>
 			<Grid itemsPerRow={2}>
-				<Card title="Techical Skills">
-					<TagsContainer>
-						<Tag theme="dark">Python</Tag>
-						<Tag theme="dark">TensorFlow</Tag>
-						<Tag theme="dark">sklearn</Tag>
-						<Tag theme="dark">PyTorch</Tag>
-						<Tag theme="dark">Java</Tag>
-						<Tag theme="dark">Latex</Tag>
-						<Tag theme="dark">Git</Tag>
-					</TagsContainer>
-				</Card>
-				<Card title="Areas of Expertise">
-					<TagsContainer>
-						<Tag>Machine Learning</Tag>
-						<Tag>Deep Learning</Tag>
-						<Tag>Statistical Analysis</Tag>
-						<Tag>Data Visualization</Tag>
-						<Tag>Algorithm Design</Tag>
-					</TagsContainer>
-				</Card>
+        <Card title="Advanced Deep Learning Courses">
+          <TagsContainer>
+            <Tag>Deep Learning for Texts and Sequences</Tag>
+            <Tag>Deep Learning for Computer Vision <BoldItalicizedSmall fontSize="8pt">Weizman Institute</BoldItalicizedSmall></Tag>
+            <Tag>Multimodal Deep Learning</Tag>
+            <Tag>Generative Models</Tag>
+            <Tag>Reinforcement Learning</Tag>
+          </TagsContainer>
+        </Card>
+        <Card title="Soft Skills">
+          From surviving technical interviews and peer reviews.
+          <TagsContainer>
+            <Tag>Technical Communication</Tag>
+            <Tag>Teaching</Tag>
+            <Tag>Public Speaking</Tag>
+            <Tag>Collaborative Research</Tag>
+            <Tag>Time Management <BoldItalicizedSmall fontSize="8pt">(Yes, the real kind)</BoldItalicizedSmall></Tag>
+          </TagsContainer>
+        </Card>
 			</Grid>
 			
-			<Subsection title="Research Assistant" cards={researchCards} />
 			<Subsection title="Professional Experience" cards={experienceCards} />
 		</div>
 	);

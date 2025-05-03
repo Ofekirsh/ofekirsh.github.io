@@ -118,8 +118,9 @@ const projectsData: ProjectData[] = [
 ];
 
 const Projects = () => (
-	<div className="content">
-		<h1>Featured Projects</h1>
+	<div>
+		<h2 style={{paddingBottom: '1.5rem'}}>Featured Projects</h2>
+    
 		<Grid itemsPerRow={3}>
 			{projectsData.map(({title, imageUrl, description, tags, sourceCodeUrl}, index) => (
 				

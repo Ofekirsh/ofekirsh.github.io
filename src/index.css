@@ -22,3 +22,11 @@ ul, ol {
 	margin-bottom: 0.1em;
 	line-height: 1.6;
 }
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: '#6488EA';
+  text-decoration: none; /* optional, removes the underline */
+}

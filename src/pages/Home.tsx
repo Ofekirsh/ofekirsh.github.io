@@ -5,6 +5,7 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Button from "../components/Button";
 import Grid from "../components/Grid";
 import Card from "../components/Card";
+import Projects from "./Projects";
 import "./Home.css";
 
 const Home = () => (
@@ -38,16 +39,20 @@ const Home = () => (
 		
 		<h2>Research Interests</h2>
 		<Grid itemsPerRow={3}>
-			<Card title="Machine Learning">
+			<Card title="Neural Language Processing (NLP)">
         Development, analysis, and use of algorithms for computer processing of sequences.
 			</Card>
-			<Card title="Mathematical Optimization">
+			<Card title="Computational Biology">
 			  Exploring the structure and behavior of biological systems through mathematical modeling and algorithmic analysis.
 			</Card>
-			<Card title="Data Science">
+			<Card title="Graph Modeling">
         Developing a graph to capture the structure and dependencies in data
 			</Card>
 		</Grid>
+    
+    <div />
+    
+    <Projects />
     
     <p className="centered">Fueled by coffee, ambition, and desire</p>
 	</div>
